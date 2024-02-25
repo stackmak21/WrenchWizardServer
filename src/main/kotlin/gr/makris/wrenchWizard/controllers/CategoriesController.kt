@@ -1,10 +1,7 @@
 package gr.makris.wrenchWizard.controllers
 
 import gr.makris.wrenchWizard.data.category.CategoryEntity
-import gr.makris.wrenchWizard.data.mechanic.MechanicCategoryEnum
-import gr.makris.wrenchWizard.data.mechanic.MechanicEntity
 import gr.makris.wrenchWizard.service.category.CategoryService
-import gr.makris.wrenchWizard.service.mechanic.MechanicService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -23,18 +20,19 @@ class CategoriesController {
     }
 
     @GetMapping("/getcategories")
-    fun getAllMechanics(): ResponseEntity<List<CategoryEntity>> {
+    fun getAllCategories(): ResponseEntity<List<CategoryEntity>> {
         val categories = categoryService.getAllCategories()
         return ResponseEntity.ok(categories)
     }
-
-//    @GetMapping("/getmechanics/{department}")
-//    fun getSpecificMechanics(@PathVariable department: MechanicCategoryEnum): ResponseEntity<List<MechanicEntity>> {
-//        val mechanics = mechanicService.findByDepartment(department)
-//        return ResponseEntity.ok(mechanics)
-//    }
-
-
-
 }
 
+////    @GetMapping("/getmechanics/{department}")
+////    fun getSpecificMechanics(@PathVariable department: MechanicCategoryEnum): ResponseEntity<List<MechanicEntity>> {
+////        val mechanics = mechanicService.findByDepartment(department)
+////        return ResponseEntity.ok(mechanics)
+////    }
+//
+//
+//
+//}
+//

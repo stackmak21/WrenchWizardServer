@@ -37,6 +37,8 @@ data class MechanicEntity(
     var city: String = Model.INVALID_STRING,
 
     @Column(name = "postalcode", nullable = true)
-    var postalCode: String = Model.INVALID_STRING
+    var postalCode: String = Model.INVALID_STRING,
 
+    @Column(name = "subcategoryid", nullable = true)
+    var subCategoryId: Int = Model.INVALID_INT
 )
