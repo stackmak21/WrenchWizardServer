@@ -1,6 +1,7 @@
 package gr.makris.wrenchWizard.controllers
 
 import gr.makris.wrenchWizard.data.category.CategoryEntity
+import gr.makris.wrenchWizard.data.category.SubCategoriesEntity
 import gr.makris.wrenchWizard.service.category.CategoryService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
