@@ -13,11 +13,14 @@ class SubCategoriesController {
 
     @Autowired
     private lateinit var subCategoriesService: SubCategoriesService
+    
 
     @GetMapping("/getsubcategories/{id}")
     fun getAllSubCategoriesById(@PathVariable id: Int): ResponseEntity<List<SubCategoriesEntity>> {
         val subCategories = subCategoriesService.getAllSubCategories(id)
         return ResponseEntity.ok(subCategories)
     }
+
+
 }
 

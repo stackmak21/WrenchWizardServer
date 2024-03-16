@@ -12,4 +12,5 @@ class SubCategoriesService(@Autowired private val subCategoriesRepository: SubCa
         return subCategoriesRepository.findByCategoryId(id)
     }
 
+
 }
