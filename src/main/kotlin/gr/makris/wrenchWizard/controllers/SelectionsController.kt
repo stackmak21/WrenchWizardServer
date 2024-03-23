@@ -1,6 +1,7 @@
 package gr.makris.wrenchWizard.controllers
 
 import gr.makris.wrenchWizard.data.category.SubCategoriesEntity
+import gr.makris.wrenchWizard.data.dto.steps.StepsDto
 import gr.makris.wrenchWizard.data.selections.StepSelectionEntity
 import gr.makris.wrenchWizard.data.selections.StepTitleEntity
 import gr.makris.wrenchWizard.service.selections.StepSelectionsService
@@ -22,10 +23,15 @@ class SelectionsController {
     @Autowired
     private lateinit var stepTitlesService: StepTitlesService
 
+    @GetMapping("/getSteps/{subCategoryId}")
+    fun getSteps(@PathVariable subCategoryId: Int): ResponseEntity<List<StepsDto>> {
+        val stepTitles = stepTitlesService.getSubcategorySteps(subCategoryId)
+        return ResponseEntity.ok(stepTitles)
+    }
 
-    @GetMapping("/getsubcategorytitles/{id}")
-    fun getAllTitlesById(@PathVariable id: Int): ResponseEntity<List<StepTitleEntity>> {
-        val stepTitles = stepTitlesService.getAllStepTitles(id)
+    @GetMapping("/getsubcategorytitles/{subCategoryId}")
+    fun getAllTitlesById(@PathVariable subCategoryId: Int): ResponseEntity<List<StepTitleEntity>> {
+        val stepTitles = stepTitlesService.getAllStepTitles(subCategoryId)
         return ResponseEntity.ok(stepTitles)
     }
 

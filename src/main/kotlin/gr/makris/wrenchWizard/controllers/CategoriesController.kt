@@ -2,6 +2,8 @@ package gr.makris.wrenchWizard.controllers
 
 import gr.makris.wrenchWizard.data.category.CategoryEntity
 import gr.makris.wrenchWizard.data.category.SubCategoriesEntity
+import gr.makris.wrenchWizard.data.dto.CategoryDto
+import gr.makris.wrenchWizard.mapper.toCategoryDto
 import gr.makris.wrenchWizard.service.category.CategoryService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -15,9 +17,9 @@ class CategoriesController {
     private lateinit var categoryService: CategoryService
 
     @PostMapping("/categories")
-    fun saveCategory(@RequestBody category: CategoryEntity): ResponseEntity<CategoryEntity> {
+    fun saveCategory(@RequestBody category: CategoryEntity): ResponseEntity<CategoryDto> {
         val savedCategory = categoryService.saveCategory(category)
-        return ResponseEntity.ok(savedCategory)
+        return ResponseEntity.ok(savedCategory.toCategoryDto())
     }
 
     @GetMapping("/getcategories")

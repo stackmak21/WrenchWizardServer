@@ -1,6 +1,5 @@
 package gr.makris.wrenchWizard.repository
 
-import gr.makris.wrenchWizard.data.category.SubCategoriesEntity
 import gr.makris.wrenchWizard.data.selections.StepTitleEntity
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query

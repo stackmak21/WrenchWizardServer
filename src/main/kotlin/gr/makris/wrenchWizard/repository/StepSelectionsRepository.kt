@@ -9,4 +9,7 @@ import org.springframework.data.repository.query.Param
 interface StepSelectionsRepository: JpaRepository<StepSelectionEntity, String> {
     @Query("SELECT * FROM stepselections WHERE subcategoryid = :subcategoryid", nativeQuery = true)
     fun findBySubcategoryId(@Param("subcategoryid") subcategoryid: Int): List<StepSelectionEntity>
+
+    @Query("SELECT * FROM stepselections WHERE steptitleid = :steptitleid", nativeQuery = true)
+    fun findByStepTitleId(@Param("steptitleid") subcategoryid: Int): List<StepSelectionEntity>
 }
